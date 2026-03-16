@@ -118,12 +118,9 @@ export default function Home() {
         console.log("Contract call result", contractCallResult);
         // The result is an array with the first element being a boolean indicating if the proof is valid
         // and the second element being the unique identifier
-        const isVerified = Array.isArray(contractCallResult)
-          ? Boolean(contractCallResult[0])
-          : false;
-        const uniqueIdentifier = Array.isArray(contractCallResult)
-          ? String(contractCallResult[1])
-          : "";
+        const isVerified = Array.isArray(contractCallResult) ? Boolean(contractCallResult[0]) : false;
+        const uniqueIdentifier = Array.isArray(contractCallResult) ? String(contractCallResult[1]) : "";
+        console.log("Unique identifier", uniqueIdentifier);
         setOnChainVerified(isVerified);
       } catch (error) {
         console.error("Error preparing verification:", error);
